@@ -38,7 +38,7 @@ const Badge: React.FC<BadgeProps> = ({ text, variant = "neutral" }) => {
 // Badges showcase component
 const Badges: React.FC = () => {
   return (
-    <div className="p-8 space-y-4 bg-white min-h-screen text-black ">
+    <div className="p-8 space-y-4 bg-white text-black ">
       <h1 className="text-xl font-bold">Badges</h1>
       <div className="space-x-3 ">
         <Badge text="Primary" variant="primary" />
