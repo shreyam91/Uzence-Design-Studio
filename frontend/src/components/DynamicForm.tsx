@@ -41,6 +41,10 @@ const DynamicForm: React.FC = () => {
   };
 
   return (
+    <>
+    <div className="p-8 space-y-4 bg-white text-black ">
+      <h1 className="text-xl font-bold">Form Componenet</h1>
+      
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <FormField
@@ -50,7 +54,7 @@ const DynamicForm: React.FC = () => {
           value={formData.name}
           onChange={handleChange}
           error={errors.name}
-        />
+          />
         <FormField
           label="Email"
           name="email"
@@ -58,7 +62,7 @@ const DynamicForm: React.FC = () => {
           value={formData.email}
           onChange={handleChange}
           error={errors.email}
-        />
+          />
         <FormField
           label="Phone"
           name="phone"
@@ -66,7 +70,7 @@ const DynamicForm: React.FC = () => {
           value={formData.phone}
           onChange={handleChange}
           error={errors.phone}
-        />
+          />
         <FormField
           label="Birthdate"
           name="birthdate"
@@ -74,19 +78,21 @@ const DynamicForm: React.FC = () => {
           value={formData.birthdate}
           onChange={handleChange}
           error={errors.birthdate}
-        />
+          />
       </div>
       <div className="flex justify-between items-center">
         <button
           type="submit"
           className="px-4 py-2 bg-blue-600 text-white rounded-md"
           disabled={isSaving}
-        >
+          >
           Submit
         </button>
         {isSaving && <span className="text-sm text-gray-500">Saving...</span>}
       </div>
     </form>
+    </div>  
+          </>
   );
 };
 
