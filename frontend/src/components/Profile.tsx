@@ -1,9 +1,11 @@
 import React, { type ChangeEvent } from 'react';
 
-interface ProfileData {
+interface FormData {
   name: string;
   email: string;
   age: string | number;
+  interest: string[];
+  theme: "light" | "dark";
 }
 
 interface ProfileErrors {
@@ -13,8 +15,8 @@ interface ProfileErrors {
 }
 
 interface ProfileProps {
-  data: ProfileData;
-  setData: React.Dispatch<React.SetStateAction<ProfileData>>;
+  data: FormData;
+  setData: React.Dispatch<React.SetStateAction<FormData>>;
   errors: ProfileErrors;
 }
 
@@ -23,7 +25,7 @@ const Profile: React.FC<ProfileProps> = ({ data, setData, errors }) => {
 
   const handleDataChange = (
     e: ChangeEvent<HTMLInputElement>,
-    item: keyof ProfileData
+    item: keyof Pick<FormData, 'name' | 'email' | 'age'>
   ) => {
     setData((prevState) => ({
       ...prevState,
@@ -43,7 +45,7 @@ const Profile: React.FC<ProfileProps> = ({ data, setData, errors }) => {
           <input
             type={type}
             value={value}
-            onChange={(e) => handleDataChange(e, key as keyof ProfileData)}
+            onChange={(e) => handleDataChange(e, key as keyof Pick<FormData, 'name' | 'email' | 'age'>)}
             className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-indigo-500 focus:border-indigo-500"
           />
           {errors[key as keyof ProfileErrors] && (

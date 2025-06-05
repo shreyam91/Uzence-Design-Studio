@@ -18,6 +18,12 @@ interface FormErrors {
   interest?: string;
 }
 
+type TabComponentProps = {
+  data: FormData;
+  setData: React.Dispatch<React.SetStateAction<FormData>>;
+  errors: FormErrors;
+};
+
 const TabForm: React.FC = () => {
   const [errors, setErrors] = useState<FormErrors>({});
   const [data, setData] = useState<FormData>({
@@ -31,7 +37,7 @@ const TabForm: React.FC = () => {
   const tabs = [
     {
       name: "Profile",
-      component: Profile,
+      component: (props: TabComponentProps) => <Profile {...props} />,
       validate: (data: FormData) => {
         const err: FormErrors = {};
 
@@ -54,7 +60,7 @@ const TabForm: React.FC = () => {
     },
     {
       name: "Interest",
-      component: Interest,
+      component: (props: TabComponentProps) => <Interest {...props} />,
       validate: (data: FormData) => {
         const err: FormErrors = {};
         if (!data.interest || data.interest.length === 0) {
@@ -66,7 +72,7 @@ const TabForm: React.FC = () => {
     },
     {
       name: "Setting",
-      component: Setting,
+      component: (props: TabComponentProps) => <Setting {...props} />,
       validate: () => {
         setErrors({});
         return true;

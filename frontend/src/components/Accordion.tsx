@@ -8,7 +8,7 @@ type AccordionItem = {
 
 const Accordion: React.FC = () => {
   const [openItems, setOpenItems] = useState<number[]>([]);
-  const allowMultipleOpen = false; // Change to true if you want multiple open at once
+  const allowMultipleOpen = false; 
 
   const items: AccordionItem[] = [
     {

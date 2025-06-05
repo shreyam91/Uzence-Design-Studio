@@ -16,12 +16,10 @@ const variantClasses: Record<BadgeVariant, string> = {
     neutral: ""
 };
 
-// Utility function to combine class names
 function classNames(...classes: string[]): string {
   return classes.filter(Boolean).join(" ");
 }
 
-// Badge component
 const Badge: React.FC<BadgeProps> = ({ text, variant = "neutral" }) => {
   return (
     <span
@@ -35,7 +33,6 @@ const Badge: React.FC<BadgeProps> = ({ text, variant = "neutral" }) => {
   );
 };
 
-// Badges showcase component
 const Badges: React.FC = () => {
   return (
     <div className="p-8 space-y-4 bg-white text-black ">

@@ -8,7 +8,7 @@ import Pagination from './components/Pagination'
 import TabForm from './components/TabForm'
 
 function App() {
-  const [currentPage, setCurrentPage] = useState(1); // Pagination starts at page 1
+  const [currentPage, setCurrentPage] = useState(1); 
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);

@@ -1,13 +1,10 @@
 import React, { type ChangeEvent } from 'react';
+import type { FormData, FormErrors } from './types'; 
 
 interface InterestProps {
-  data: {
-    interest: string[];
-  };
-  setData: React.Dispatch<React.SetStateAction<{ interest: string[] }>>;
-  errors: {
-    interest?: string;
-  };
+  data: FormData;
+  setData: React.Dispatch<React.SetStateAction<FormData>>;
+  errors: FormErrors;
 }
 
 const Interest: React.FC<InterestProps> = ({ data, setData, errors }) => {

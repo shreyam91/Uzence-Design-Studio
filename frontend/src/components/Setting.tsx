@@ -1,12 +1,10 @@
 import React, { type ChangeEvent } from 'react';
-
-interface SettingData {
-  theme: 'light' | 'dark';
-}
+import type { FormData } from './types'; 
 
 interface SettingProps {
-  data: SettingData;
-  setData: React.Dispatch<React.SetStateAction<SettingData>>;
+  data: FormData;
+  setData: React.Dispatch<React.SetStateAction<FormData>>;
+  errors: {}; 
 }
 
 const Setting: React.FC<SettingProps> = ({ data, setData }) => {
