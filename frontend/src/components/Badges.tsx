@@ -8,12 +8,12 @@ interface BadgeProps {
 }
 
 const variantClasses: Record<BadgeVariant, string> = {
-    primary: "bg-blue-100 text-blue-800 ",
-    success: "bg-green-100 text-green-800 ",
-    warning: "bg-orange-100 text-orange-800 ",
-    error: "bg-red-200 text-red-800 ",
-    info: "bg-gray-100 text-gray-800 ",
-    neutral: ""
+  primary: "bg-blue-100 text-blue-800",
+  success: "bg-green-100 text-green-800",
+  warning: "bg-orange-100 text-orange-800",
+  error: "bg-red-200 text-red-800",
+  info: "bg-gray-100 text-gray-800",
+  neutral: ""
 };
 
 function classNames(...classes: string[]): string {
@@ -35,9 +35,9 @@ const Badge: React.FC<BadgeProps> = ({ text, variant = "neutral" }) => {
 
 const Badges: React.FC = () => {
   return (
-    <div className="p-8 space-y-4 bg-white text-black ">
-      <h1 className="text-xl font-bold">Badges</h1>
-      <div className="space-x-3 ">
+    <div className="p-4 sm:p-8 space-y-4 bg-white text-black">
+      <h1 className="text-lg sm:text-xl font-bold">Badges</h1>
+      <div className="flex flex-wrap gap-3">
         <Badge text="Primary" variant="primary" />
         <Badge text="Success" variant="success" />
         <Badge text="Warning" variant="warning" />
