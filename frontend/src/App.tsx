@@ -5,6 +5,7 @@ import Badges from './components/Badges'
 import ColorTemplate from './components/ColorTemplate'
 import DynamicForm from './components/DynamicForm'
 import Pagination from './components/Pagination'
+import TabForm from './components/TabForm'
 
 function App() {
   const [currentPage, setCurrentPage] = useState(1); // Pagination starts at page 1
@@ -30,6 +31,7 @@ function App() {
     <Badges/>
     <Accordion/>
     <DynamicForm/>
+    <TabForm/>
 
    </>
   )
